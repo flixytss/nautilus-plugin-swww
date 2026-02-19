@@ -6,8 +6,7 @@ class ImageCommandExtension(GObject.GObject, Nautilus.MenuProvider):
 
     def run_command(self, menu, file):
         path = file.get_location().get_path()
-
-        # Aquí pones tu comando
+        
         with open(f"{os.getenv("HOME")}/.local/state/initback.sh", "w") as file:
             file.write(f"#!/bin/bash\nswww img \"{path}\"")
             file.close()
